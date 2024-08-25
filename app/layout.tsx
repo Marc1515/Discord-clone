@@ -1,9 +1,11 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import { ThemeProvider } from "@/components/providers/theme-provider";
+
 import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/components/providers/theme-provider";
+import { ModalProvider } from "@/components/providers/modal-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +29,7 @@ export default function RootLayout({
             enableSystem={true}
             storageKey="discrod-theme"
           >
+            <ModalProvider />
             {children}
           </ThemeProvider>
         </body>
