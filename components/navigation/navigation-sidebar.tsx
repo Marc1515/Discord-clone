@@ -12,12 +12,9 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { UserButton } from "@clerk/nextjs";
 
 export const NavigationSidebar = async () => {
-  console.log("NavigationSidebar is rendering");
-
   const profile = await currentProfile();
 
   if (!profile) {
-    console.log("No profile found, redirecting");
     return redirect("/");
   }
 
@@ -31,7 +28,7 @@ export const NavigationSidebar = async () => {
     },
   });
 
-  console.log("Servers fetched", servers);
+  /* console.log("Servers fetched", servers); */
 
   return (
     <div className="space-y-4 flex flex-col items-center h-full text-primary w-full dark:bg-[#1E1F22] py-3">

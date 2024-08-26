@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 
+import { InviteModal } from "@/components/modals/invite-modal";
 import { CreateServerModal } from "@/components/modals/create-server-modal.tsx";
 
 export const ModalProvider = () => {
@@ -9,17 +10,16 @@ export const ModalProvider = () => {
 
   useEffect(() => {
     setIsMounted(true);
-    console.log("ModalProvider mounted");
   }, []);
 
   if (!isMounted) {
-    console.log("ModalProvider not mounted yet");
     return null;
   }
 
   return (
     <>
       <CreateServerModal />
+      <InviteModal />
     </>
   );
 };
