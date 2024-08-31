@@ -32,7 +32,7 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
     );
 
     socketInstance.on("connect", () => {
-      setIsConnected(false);
+      setIsConnected(true);
     });
 
     socketInstance.on("disconnect", () => {
